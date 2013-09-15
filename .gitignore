@@ -1,0 +1,9 @@
+syntax: glob
+*.pyc
+.git
+.idea
+lib
+include
+dist
+bin
+.Python
