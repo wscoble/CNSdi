@@ -32,7 +32,7 @@ class TestDecorators(TestCase):
         self.assertEqual('func', actual_func, "Injection failed for function service.")
 
 
-@service('sf')
+@service('sf', ns='default')
 def func(arg):
     return arg
 
