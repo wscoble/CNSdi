@@ -11,3 +11,4 @@ di/test/__init__.py
 di/test/test_decorators.py
 di/test/test_exceptions.py
 di/test/test_helpers.py
+di/test/test_namespaced_services.py
