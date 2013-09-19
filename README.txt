@@ -6,8 +6,8 @@ CNS Dependency Injection is a very simple way to store and inject services into 
 
 It looks like this for Flask (dumb example, but you should get the point)::
 
-    from cns.di.helpers import get_service, add_service
-    from cns.di.decorator import service, inject
+    from di.helpers import get_service, add_service
+    from di.decorator import service, inject
     from flask import Flask
 
     app = Flask(__name__)
