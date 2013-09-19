@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='CNSdi',
-    version='0.1.1',
+    version='0.1.2',
     author='Scott Scoble',
     author_email='sscoble@codesmith.ws',
     packages=['di','di.test'],

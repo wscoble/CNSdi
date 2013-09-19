@@ -46,14 +46,25 @@ class Injector(object):
         self.store = store
         self.namespace = ns
 
+    # TODO: figure out a better way to hint arguments
     def __call__(self, f):
         if 'self' in inspect.getargspec(f).args:
-            def new_f(s):
-                return f(s, *self.get_services())
+            def new_f(s, *args, **kwargs):
+                _args = []
+                for service in self.get_services():
+                    _args.append(service)
+                for arg in args:
+                    _args.append(arg)
+                return f(s, *_args, **kwargs)
             return new_f
         else:
-            def new_f():
-                return f(*self.get_services())
+            def new_f(*args, **kwargs):
+                _args = []
+                for service in self.get_services():
+                    _args.append(service)
+                for arg in args:
+                    _args.append(arg)
+                return f(*_args, **kwargs)
             return new_f
 
     def get_services(self):
