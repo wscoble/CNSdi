@@ -1,74 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Cnsdi by wscoble</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Cnsdi</h1>
-        <p>A very simple dependency injection library for python</p>
-
-        <p class="view"><a href="https://github.com/wscoble/CNSdi">View the Project on GitHub <small>wscoble/CNSdi</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/wscoble/CNSdi/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/wscoble/CNSdi/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/wscoble/CNSdi">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="cns-di" class="anchor" href="#cns-di"><span class="octicon octicon-link"></span></a>CNS DI</h1>
-
-<p><a href="https://travis-ci.org/wscoble/CNSdi"><img src="https://travis-ci.org/wscoble/CNSdi.png?branch=master" alt="Build Status"></a></p>
-
-<p>CNS Dependency Injection is a very simple way to store and inject services into your software.</p>
-
-<p>It looks like this for Flask (dumb example, but you should get the point)::</p>
-
-<pre><code>from di.helpers import get_service, add_service
-from di.decorator import service, inject
-from flask import Flask
-
-app = Flask(__name__)
-add_service('router', app.route)
-
-@service('adder')
-def adder(*args):
-  sum = 0
-  for arg in args:
-    sum += arg
-  return sum
-
-router = get_service('router')
-
-@router('/adds')
-def adds():
-  sum = get_service('adder')([1,2,3])
-  return "hello " + repr(sum)
-
-get_service('app').run()
-</code></pre>
-
-<p>If you are going to <a href="https://github.com/inject" class="user-mention">@inject</a> into a class, do it on the <strong>init</strong> function.  <a href="https://github.com/service" class="user-mention">@service</a> can be used with classes or functions.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/wscoble">wscoble</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>CNSdi - Simple Python Dependency Injection</title>
+  <link rel="stylesheet" href="pycco.css" />
+  <link rel="stylesheet" href="pycco.overrides.css" />
+</head>
+<body>
+<div id="background"></div>
+<div id='container'>
+  <div class='section'>
+    <div class='docs'><h1>pip install CNSdi &emsp; <a href="https://travis-ci.org/wscoble/CNSdi"><img alt="Build Status" src="https://travis-ci.org/wscoble/CNSdi.png?branch=master" /></a></h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <p>"<strong>CNSdi</strong>" is a simple Python dependency injection library, build for simplicity of use.  Services can be identified through <em>id</em> and <em>namespace</em>.</p>
+	  <ul>
+	            <li><a href="https://github.com/wscoble/CNSdi/zipball/master">Download <strong>ZIP File</strong></a></li>
+	            <li><a href="https://github.com/wscoble/CNSdi/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	            <li><a href="https://github.com/wscoble/CNSdi">View On <strong>GitHub</strong></a></li>
+	          </ul>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <h3><span id="decorator-imports" href="decorator-imports"> Decorator imports </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">di.decorator</span> <span class="kn">import</span> <span class="n">service</span><span class="p">,</span> <span class="n">inject</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <h3><span id="service-examples" href="service-examples"> Service examples </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Create a service with an id of <em>a.service</em> that, when retrieved, will return the <em>a_service</em> function, unmolested.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@service</span><span class="p">(</span><span class="s">&#39;a.service&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">a_service</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">&quot;I am a service&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Create a service that will return an instantiated object.  This time, the <em>namespace</em> is explicitly set for the service.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@service</span><span class="p">(</span><span class="s">&#39;another.service&#39;</span><span class="p">,</span> <span class="n">to_namespace</span><span class="o">=</span><span class="s">&#39;not.the.default.namespace&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AnotherService</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <h3><span id="inject-examples" href="inject-examples"> Inject examples </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Since <em>a.service</em> stores a function, you can call it like any other function.  The raw function stored as <em>a.service</em> is injected into this function.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@inject</span><span class="p">([</span><span class="s">&#39;a.service&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">svc</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">svc</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">func</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;I am a service&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">class</span> <span class="nc">InjectedObject</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>You can inject into an class too, just do it in the constructor or any other function in the class.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="nd">@inject</span><span class="p">([</span><span class="s">&#39;a.service&#39;</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">svc</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">InjectedObject</span><span class="p">()</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;I am a service&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Services can have injected functions as well.  It just works.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@service</span><span class="p">(</span><span class="s">&#39;a.object.service&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">InjectedServiceObject</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@inject</span><span class="p">([</span><span class="s">&#39;a.service&#39;</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">svc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">svc</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <h3><span id="use-helpers!" href="use-helpers!"> Use helpers! </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">di.helpers</span> <span class="kn">import</span> <span class="n">add_service</span><span class="p">,</span> <span class="n">get_service</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Helpers help make things a little easier for procedural code.  Here you can grab a service and start using it immediately.  No additional wiring needed.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">get_service</span><span class="p">(</span><span class="s">&#39;a.object.service&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;I am a service&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>So let's say you have a file that imports and collects all your services.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">markdown</span> <span class="kn">import</span> <span class="n">markdown</span>
+<span class="n">add_service</span><span class="p">(</span><span class="s">&#39;markdown&#39;</span><span class="p">,</span> <span class="n">markdown</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>In another file, you can call up that service and use it immediately.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="s">&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&#39;</span> <span class="o">==</span> <span class="n">get_service</span><span class="p">(</span><span class="s">&#39;markdown&#39;</span><span class="p">)(</span><span class="s">&#39;#Hello World!&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>Then you decide you want to use a different markdown renderer.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">my.markdown.renderer</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="n">add_service</span><span class="p">(</span><span class="s">&#39;markdown&#39;</span><span class="p">,</span> <span class="n">render</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>You call the same code in the other file, and it should work the same!</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="s">&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&#39;</span> <span class="o">==</span> <span class="n">get_service</span><span class="p">(</span><span class="s">&#39;markdown&#39;</span><span class="p">)(</span><span class="s">&#39;#Hello World!&#39;</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
