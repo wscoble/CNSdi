@@ -10,5 +10,4 @@ setup(
     url='http://wscoble.github.io/CNSdi',
     description='Simple Dependency Injection for python',
     long_description=open('README.txt').read(),
-    install_requires=[]
 )
